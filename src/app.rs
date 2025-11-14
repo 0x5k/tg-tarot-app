@@ -102,7 +102,7 @@ pub fn app() -> Html {
                 status={feedback.status_text().map(str::to_owned)}
                 error={feedback.error_text().map(str::to_owned)}
             />
-            <CardGrid cards={reading.cards().to_vec()} reveal={reading.has_cards()} />
+            <CardGrid cards={reading.cards().to_vec()} />
             <DrawControls
                 selected={*draw_count}
                 on_select={handle_select}
