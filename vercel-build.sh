@@ -1,11 +1,13 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-# Source cargo environment if rustup is in PATH
-if [ -f "$HOME/.cargo/env" ]; then
-    source "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if ! command -v rustup >/dev/null; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
-# Build with trunk
-trunk build --release --public-url .
+rustup target add wasm32-unknown-unknown >/dev/null 2>&1 || true
+cargo install trunk --locked >/dev/null 2>&1 || true
 
+trunk build --release --public-url .

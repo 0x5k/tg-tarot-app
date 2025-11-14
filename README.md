@@ -69,27 +69,25 @@ docker run -p 8080:8080 tg-tarot
 
 ### Vercel (static site)
 
-Vercel can deploy the generated static assets automatically. The project includes
-configuration files (`vercel.json`, `vercel-install.sh`, `vercel-build.sh`) that
-handle the build process.
+Vercel can deploy the static `dist/` directory directly. The repo ships with
+`vercel-build.sh` plus `vercel.json`, so the platform knows how to:
 
-**Quick deployment:**
+1. Install Rust/Trunk inside the build container.
+2. Run `trunk build --release --public-url .`.
+3. Skip Vercel’s own `wasm-opt` pass via the `VERCEL_SKIP_WASM_BINARYEN=1`
+   environment variable (this avoids the “error parsing wasm” failure).
 
-1. Push your code to GitHub (or connect via Vercel CLI)
-2. Import the project in Vercel
-3. Vercel will automatically detect the `vercel.json` configuration
-4. The build will:
-   - Install Rust toolchain
-   - Install trunk (version 0.18.0 or 0.17.0 if that fails)
-   - Build the WASM bundle
-   - Output to the `dist/` directory
+**Quick deployment**
 
-**Manual configuration (if needed):**
+1. Push this repo to GitHub (or connect via the Vercel CLI).
+2. Import the project in Vercel; leave “Framework” as **Other**.
+3. Vercel reads `vercel.json`, executes `bash vercel-build.sh`, and serves `dist/`.
 
-If auto-detection doesn't work, configure the project as "Other" with:
+**Manual override (if you change settings later)**
+
 - **Build Command:** `bash vercel-build.sh`
-- **Install Command:** `bash vercel-install.sh`
 - **Output Directory:** `dist`
+- **Environment Variable:** `VERCEL_SKIP_WASM_BINARYEN=1`
 
 Telegram Mini Apps expect HTTPS, so a Vercel deployment works out of the box
 once the project is connected. After deployment, use your Vercel URL as the
