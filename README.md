@@ -35,10 +35,10 @@ watches the project for live reloads.
   `cards.rs` (static data). Update the list to add or edit cards.
 - [`src/ui/`](src/ui) – small, well-documented UI components (`DrawControls`
   and `CardGrid`).
-- [`src/telegram.rs`](src/telegram.rs) – a lightweight bridge to the
-  Telegram WebApp API that reads theme colors on launch and now exposes
-  `use_main_button`/`use_back_button` hooks so you can manage Telegram's
-  native buttons from Yew components.
+- [`src/telegram.rs`](src/telegram.rs) – glue around the
+  [`telegram-webapp-sdk`](https://crates.io/crates/telegram-webapp-sdk) crate
+  that initialises the Mini App context, mirrors Telegram theme tokens, and
+  exposes `use_main_button`/`use_back_button` hooks for native controls.
 - [`static/styles.css`](static/styles.css) – global styling shared across the
   app (copied into the `dist/` folder by Trunk).
 - [`Trunk.toml`](Trunk.toml) & [`index.html`](index.html) – Trunk build config
@@ -54,6 +54,34 @@ watches the project for live reloads.
    `expand()` and `ready()` so the webview behaves like a native screen.
 4. (Optional) explore [`telegram-webapp-sdk`](https://github.com/RAprogramm/telegram-webapp-sdk)
    for advanced features such as sending results back to the bot.
+
+## Deployment
+
+### Docker
+
+Build and run the Docker image locally (it compiles the WASM bundle with Trunk
+and serves the static `dist/` directory from Nginx):
+
+```bash
+docker build -t tg-tarot .
+docker run -p 8080:8080 tg-tarot
+```
+
+### Vercel (static site)
+
+Vercel can deploy the generated static assets. Configure the project as
+“Other” and use the following build command:
+
+```bash
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source "$HOME/.cargo/env"
+rustup target add wasm32-unknown-unknown
+cargo install trunk
+trunk build --release --public-url .
+```
+
+Set **Output Directory** to `dist`. Telegram Mini Apps expect HTTPS, so a
+Vercel branch deployment works out of the box once the project is connected.
 
 ## Next steps
 

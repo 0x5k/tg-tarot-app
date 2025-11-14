@@ -1,9 +1,15 @@
 use yew::prelude::*;
 
 #[cfg(target_arch = "wasm32")]
+use telegram_webapp_sdk::{
+    core::{context::TelegramContext, init::try_init_sdk, types::theme_params::TelegramThemeParams},
+    webapp::TelegramWebApp,
+};
+
+#[cfg(target_arch = "wasm32")]
 use gloo::utils::document;
 #[cfg(target_arch = "wasm32")]
-use wasm_bindgen::prelude::Closure;
+use telegram_webapp_sdk::webapp::types::EventHandle;
 #[cfg(target_arch = "wasm32")]
 use wasm_bindgen::JsCast;
 #[cfg(target_arch = "wasm32")]
@@ -16,6 +22,18 @@ pub struct TelegramTheme {
     pub text_color: Option<String>,
     pub button_color: Option<String>,
     pub button_text_color: Option<String>,
+}
+
+#[cfg(target_arch = "wasm32")]
+impl From<TelegramThemeParams> for TelegramTheme {
+    fn from(params: TelegramThemeParams) -> Self {
+        Self {
+            background_color: params.bg_color,
+            text_color: params.text_color,
+            button_color: params.button_color,
+            button_text_color: params.button_text_color,
+        }
+    }
 }
 
 /// Declarative state for the Telegram MainButton.
@@ -51,16 +69,19 @@ pub struct BackButtonState {
 pub fn init_web_app() -> TelegramTheme {
     #[cfg(target_arch = "wasm32")]
     {
-        if let Some(web_app) = web_app_object() {
-            let _ = call_method(&web_app, "expand");
-            let _ = call_method(&web_app, "ready");
+        match try_init_sdk() {
+            Ok(true) => {}
+            Ok(false) => return TelegramTheme::default(),
+            Err(_) => return TelegramTheme::default(),
+        }
 
-            return TelegramTheme {
-                background_color: read_theme_value(&web_app, "bg_color"),
-                text_color: read_theme_value(&web_app, "text_color"),
-                button_color: read_theme_value(&web_app, "button_color"),
-                button_text_color: read_theme_value(&web_app, "button_text_color"),
-            };
+        if let Some(app) = TelegramWebApp::instance() {
+            let _ = app.expand();
+            let _ = app.ready();
+        }
+
+        if let Some(theme) = TelegramContext::get(|ctx| ctx.theme_params.clone()) {
+            return TelegramTheme::from(theme);
         }
     }
 
@@ -215,144 +236,50 @@ fn web_app_object() -> Option<wasm_bindgen::JsValue> {
 }
 
 #[cfg(target_arch = "wasm32")]
-fn call_method(target: &wasm_bindgen::JsValue, method: &str) -> Result<(), wasm_bindgen::JsValue> {
-    use js_sys::Reflect;
-    use wasm_bindgen::{JsCast, JsValue};
-    if let Ok(value) = Reflect::get(target, &JsValue::from_str(method)) {
-        if let Some(function) = value.dyn_ref::<js_sys::Function>() {
-            function.call0(target).map(|_| ())
-        } else {
-            Ok(())
-        }
-    } else {
-        Ok(())
-    }
-}
-
-#[cfg(target_arch = "wasm32")]
-fn call_method_with_value(
-    target: &wasm_bindgen::JsValue,
-    method: &str,
-    value: &wasm_bindgen::JsValue,
-) -> Result<(), wasm_bindgen::JsValue> {
-    use js_sys::Reflect;
-    use wasm_bindgen::{JsCast, JsValue};
-    if let Ok(invocable) = Reflect::get(target, &JsValue::from_str(method)) {
-        if let Some(function) = invocable.dyn_ref::<js_sys::Function>() {
-            function.call1(target, value).map(|_| ())
-        } else {
-            Ok(())
-        }
-    } else {
-        Ok(())
-    }
-}
-
-#[cfg(target_arch = "wasm32")]
-fn read_theme_value(web_app: &wasm_bindgen::JsValue, field: &str) -> Option<String> {
-    use js_sys::Reflect;
-    use wasm_bindgen::JsValue;
-    let params = Reflect::get(web_app, &JsValue::from_str("themeParams")).ok()?;
-    Reflect::get(&params, &JsValue::from_str(field))
-        .ok()
-        .and_then(|value| value.as_string())
-}
-
-#[cfg(target_arch = "wasm32")]
 fn sync_main_button(state: &MainButtonState) {
-    use wasm_bindgen::JsValue;
-    if let Some(button) = main_button_object() {
-        let text = JsValue::from(state.text.to_string());
-        let _ = call_method_with_value(&button, "setText", &text);
+    if let Some(app) = TelegramWebApp::instance() {
+        let text = state.text.to_string();
+        let _ = app.set_main_button_text(&text);
 
         if state.visible {
-            let _ = call_method(&button, "show");
+            let _ = app.show_main_button();
         } else {
-            let _ = call_method(&button, "hide");
+            let _ = app.hide_main_button();
         }
 
         if state.enabled {
-            let _ = call_method(&button, "enable");
+            let _ = app.enable_main_button();
         } else {
-            let _ = call_method(&button, "disable");
+            let _ = app.disable_main_button();
         }
 
         if state.loading {
-            let _ = call_method(&button, "showProgress");
+            let _ = app.show_main_button_progress(false);
         } else {
-            let _ = call_method(&button, "hideProgress");
+            let _ = app.hide_main_button_progress();
         }
     }
 }
 
 #[cfg(target_arch = "wasm32")]
 fn sync_back_button(state: &BackButtonState) {
-    if let Some(button) = back_button_object() {
+    if let Some(app) = TelegramWebApp::instance() {
         if state.visible {
-            let _ = call_method(&button, "show");
+            let _ = app.show_back_button();
         } else {
-            let _ = call_method(&button, "hide");
+            let _ = app.hide_back_button();
         }
     }
 }
 
 #[cfg(target_arch = "wasm32")]
-fn register_main_button_handler(callback: Callback<()>) -> Option<TelegramEventGuard> {
-    let button = main_button_object()?;
-    let closure = Closure::wrap(Box::new(move || callback.emit(())) as Box<dyn FnMut()>);
-    let _ = call_method_with_value(&button, "onClick", closure.as_ref());
-    Some(TelegramEventGuard::new(button, "offClick", closure))
+fn register_main_button_handler(callback: Callback<()>) -> Option<EventHandle<dyn FnMut()>> {
+    let app = TelegramWebApp::instance()?;
+    app.set_main_button_callback(move || callback.emit(())).ok()
 }
 
 #[cfg(target_arch = "wasm32")]
-fn register_back_button_handler(callback: Callback<()>) -> Option<TelegramEventGuard> {
-    let button = back_button_object()?;
-    let closure = Closure::wrap(Box::new(move || callback.emit(())) as Box<dyn FnMut()>);
-    let _ = call_method_with_value(&button, "onClick", closure.as_ref());
-    Some(TelegramEventGuard::new(button, "offClick", closure))
-}
-
-#[cfg(target_arch = "wasm32")]
-fn main_button_object() -> Option<wasm_bindgen::JsValue> {
-    use js_sys::Reflect;
-    use wasm_bindgen::JsValue;
-    let web_app = web_app_object()?;
-    Reflect::get(&web_app, &JsValue::from_str("MainButton")).ok()
-}
-
-#[cfg(target_arch = "wasm32")]
-fn back_button_object() -> Option<wasm_bindgen::JsValue> {
-    use js_sys::Reflect;
-    use wasm_bindgen::JsValue;
-    let web_app = web_app_object()?;
-    Reflect::get(&web_app, &JsValue::from_str("BackButton")).ok()
-}
-
-#[cfg(target_arch = "wasm32")]
-struct TelegramEventGuard {
-    target: wasm_bindgen::JsValue,
-    method: &'static str,
-    callback: Closure<dyn FnMut()>,
-}
-
-#[cfg(target_arch = "wasm32")]
-impl TelegramEventGuard {
-    fn new(
-        target: wasm_bindgen::JsValue,
-        method: &'static str,
-        callback: Closure<dyn FnMut()>,
-    ) -> Self {
-        Self {
-            target,
-            method,
-            callback,
-        }
-    }
-}
-
-#[cfg(target_arch = "wasm32")]
-impl Drop for TelegramEventGuard {
-    fn drop(&mut self) {
-        let _ = call_method_with_value(&self.target, self.method, self.callback.as_ref());
-    }
+fn register_back_button_handler(callback: Callback<()>) -> Option<EventHandle<dyn FnMut()>> {
+    let app = TelegramWebApp::instance()?;
+    app.set_back_button_callback(move || callback.emit(())).ok()
 }
