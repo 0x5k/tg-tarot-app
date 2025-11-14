@@ -6,8 +6,9 @@ use crate::deck::DrawCount;
 pub struct DrawControlsProps {
     pub selected: DrawCount,
     pub on_select: Callback<DrawCount>,
-    pub on_draw: Callback<MouseEvent>,
-    pub is_busy: bool,
+    pub on_draw: Callback<()>,
+    pub on_copy: Callback<()>,
+    pub can_copy: bool,
 }
 
 #[function_component(DrawControls)]
@@ -16,15 +17,21 @@ pub fn draw_controls(props: &DrawControlsProps) -> Html {
         selected,
         on_select,
         on_draw,
-        is_busy,
+        on_copy,
+        can_copy,
     } = props;
 
     let handle_draw = {
         let on_draw = on_draw.clone();
         Callback::from(move |event: MouseEvent| {
             event.prevent_default();
-            on_draw.emit(event);
+            on_draw.emit(());
         })
+    };
+
+    let handle_copy = {
+        let on_copy = on_copy.clone();
+        Callback::from(move |_| on_copy.emit(()))
     };
 
     html! {
@@ -32,14 +39,23 @@ pub fn draw_controls(props: &DrawControlsProps) -> Html {
             <div class="toggle-group" role="radiogroup" aria-label="Choose draw size">
                 { for DrawCount::ALL.iter().map(|count| render_toggle(*count, *selected, on_select)) }
             </div>
-            <button
-                type="button"
-                class="button-primary"
-                onclick={handle_draw}
-                disabled={*is_busy}
-            >
-                { if *is_busy { "Drawing..." } else { "Draw cards" } }
-            </button>
+            <div class="controls-buttons">
+                <button
+                    type="button"
+                    class="button-primary"
+                    onclick={handle_draw}
+                >
+                    { "Draw cards" }
+                </button>
+                <button
+                    type="button"
+                    class="button-secondary"
+                    onclick={handle_copy}
+                    disabled={!*can_copy}
+                >
+                    { "Copy names" }
+                </button>
+            </div>
         </section>
     }
 }

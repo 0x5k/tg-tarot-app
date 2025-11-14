@@ -1,73 +1,24 @@
-use gloo::timers::callback::Timeout;
 use yew::prelude::*;
 
-use crate::deck::{Deck, DrawCount, DrawnCard};
-use crate::telegram::{TelegramTheme, init_web_app, theme_style};
-use crate::ui::{CardGrid, DrawControls};
-
-#[derive(Clone, PartialEq)]
-struct Reading {
-    cards: Vec<DrawnCard>,
-    stage: RevealStage,
-}
-
-impl Reading {
-    fn empty() -> Self {
-        Self {
-            cards: Vec::new(),
-            stage: RevealStage::Idle,
-        }
-    }
-
-    fn start(cards: Vec<DrawnCard>) -> Self {
-        Self {
-            cards,
-            stage: RevealStage::Dealing,
-        }
-    }
-
-    fn reveal(current: &Self) -> Self {
-        if current.cards.is_empty() {
-            Self::empty()
-        } else {
-            Self {
-                cards: current.cards.clone(),
-                stage: RevealStage::Revealed,
-            }
-        }
-    }
-
-    fn is_revealed(&self) -> bool {
-        matches!(self.stage, RevealStage::Revealed)
-    }
-
-    fn is_dealing(&self) -> bool {
-        matches!(self.stage, RevealStage::Dealing)
-    }
-}
-
-#[derive(Clone, Copy, PartialEq)]
-enum RevealStage {
-    Idle,
-    Dealing,
-    Revealed,
-}
-
-impl Default for Reading {
-    fn default() -> Self {
-        Self::empty()
-    }
-}
+use crate::deck::{Deck, DrawCount};
+use crate::feedback::Feedback;
+use crate::reading::Reading;
+use crate::telegram::{
+    copy_to_clipboard, init_web_app, theme_style, use_back_button, use_main_button,
+    BackButtonState, MainButtonState, TelegramTheme,
+};
+use crate::ui::{CardGrid, DrawControls, StatusBanner};
 
 #[function_component(App)]
 pub fn app() -> Html {
     let draw_count = use_state(|| DrawCount::One);
     let reading = use_state(Reading::default);
+    let feedback = use_state(Feedback::default);
     let theme = use_state(TelegramTheme::default);
 
     {
         let theme = theme.clone();
-        use_effect(move || {
+        use_effect_with((), move |_| {
             theme.set(init_web_app());
             || ()
         });
@@ -81,35 +32,84 @@ pub fn app() -> Html {
     let handle_draw = {
         let draw_count = draw_count.clone();
         let reading = reading.clone();
-        Callback::from(move |_| {
-            let cards = Deck::standard().draw_random(*draw_count);
-            reading.set(Reading::start(cards));
-
-            let reveal_handle = reading.clone();
-            Timeout::new(240, move || {
-                let next = Reading::reveal(&*reveal_handle);
-                reveal_handle.set(next);
-            })
-            .forget();
+        let feedback = feedback.clone();
+        Callback::from(move |_| match Deck::standard().draw_random(*draw_count) {
+            Ok(cards) => {
+                reading.set(Reading::from_cards(cards));
+                feedback.set(Feedback::default());
+            }
+            Err(err) => {
+                reading.set(Reading::empty());
+                feedback.set(Feedback::error(err.to_string()));
+            }
         })
     };
 
+    let handle_reset = {
+        let reading = reading.clone();
+        let feedback = feedback.clone();
+        Callback::from(move |_| {
+            reading.set(Reading::empty());
+            feedback.set(Feedback::status("Cleared reading".to_string()));
+        })
+    };
+
+    let handle_copy = {
+        let reading = reading.clone();
+        let feedback = feedback.clone();
+        Callback::from(move |_| {
+            let cards = reading.cards();
+            if cards.is_empty() {
+                feedback.set(Feedback::error("Draw cards before copying."));
+                return;
+            }
+
+            let names: Vec<&str> = cards.iter().map(|card| card.name()).collect();
+            let payload = names.join("\n");
+            match copy_to_clipboard(&payload) {
+                Ok(_) => {
+                    let count = names.len();
+                    let label = match count {
+                        1 => "Copied 1 card name".to_string(),
+                        3 => "Copied 3 card names".to_string(),
+                        5 => "Copied 5 card names".to_string(),
+                        _ => format!("Copied {count} card names"),
+                    };
+                    feedback.set(Feedback::status(label));
+                }
+                Err(err) => feedback.set(Feedback::error(err)),
+            }
+        })
+    };
+
+    let has_cards = reading.has_cards();
+
+    use_main_button(
+        MainButtonState {
+            text: AttrValue::from("Draw cards"),
+            visible: true,
+            enabled: true,
+            loading: false,
+        },
+        handle_draw.clone(),
+    );
+
+    use_back_button(BackButtonState { visible: has_cards }, handle_reset.clone());
+
     html! {
         <main class="layout" style={theme_style(&*theme)}>
-            <header class="hero">
-                <h1>{"Telegram Tarot"}</h1>
-                <p>{"Draw a single card or a mini spread, right inside Telegram."}</p>
-            </header>
+            <StatusBanner
+                status={feedback.status_text().map(str::to_owned)}
+                error={feedback.error_text().map(str::to_owned)}
+            />
+            <CardGrid cards={reading.cards().to_vec()} reveal={reading.has_cards()} />
             <DrawControls
                 selected={*draw_count}
                 on_select={handle_select}
-                on_draw={handle_draw}
-                is_busy={reading.is_dealing()}
+                on_draw={handle_draw.clone()}
+                on_copy={handle_copy}
+                can_copy={reading.has_cards()}
             />
-            <CardGrid cards={reading.cards.clone()} reveal={reading.is_revealed()} />
-            <footer class="helper-text">
-                <p>{"Tip: drop your 78 .webp card images into the assets/ folder before running Trunk."}</p>
-            </footer>
         </main>
     }
 }

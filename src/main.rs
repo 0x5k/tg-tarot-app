@@ -1,5 +1,7 @@
 mod app;
 mod deck;
+mod feedback;
+mod reading;
 mod telegram;
 mod ui;
 

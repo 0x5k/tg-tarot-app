@@ -1,13 +1,18 @@
 use super::TarotCard;
+use once_cell::sync::Lazy;
+use std::collections::HashMap;
+
+/// Auto-generated keywords for any cards detected purely from the assets folder.
+pub const AUTO_KEYWORDS: &[&str] = &["intuitive", "auto-generated"];
 
 /// Standard tarot deck data. The list includes the 22 Major Arcana plus a
 /// sample of the Minor Arcana so newcomers can see how to extend it.
 ///
-/// Feel free to replace the text or add the remaining suits – the app will
-/// automatically pick up any new cards as long as the filename matches the
-/// `slug` (e.g. `the-fool.webp`).
+/// Feel free to replace the text or add the remaining suits – the build script
+/// will automatically pick up any new `.webp` cards as long as the filename
+/// matches the slug (e.g. `the-fool.webp`).
 #[rustfmt::skip]
-pub const CARDS: &[TarotCard] = &[
+const MANUAL_CARDS: &[TarotCard] = &[
     TarotCard { slug: "the-fool", name: "The Fool", upright: "Leap into the new with curiosity and trust the journey.", reversed: "Check your footing before you jump; an impulsive move needs a pause.", keywords: &["beginnings", "wonder", "faith"] },
     TarotCard { slug: "the-magician", name: "The Magician", upright: "Every tool you need is within reach – act with focused intent.", reversed: "Scattered attention or doubt is blurring the spell.", keywords: &["skill", "willpower", "manifestation"] },
     TarotCard { slug: "the-high-priestess", name: "The High Priestess", upright: "Your quiet inner voice already knows the answer.", reversed: "Secrets or second guessing are muffling your intuition.", keywords: &["intuition", "mystery", "stillness"] },
@@ -37,3 +42,21 @@ pub const CARDS: &[TarotCard] = &[
     TarotCard { slug: "ace-of-swords", name: "Ace of Swords", upright: "Truth slices through confusion – speak with clarity.", reversed: "Doubt fogs the insight; ground your thoughts.", keywords: &["clarity", "logic", "communication"] },
     TarotCard { slug: "ace-of-pentacles", name: "Ace of Pentacles", upright: "A practical opportunity is ready to plant.", reversed: "Tidy the foundation before investing more energy.", keywords: &["stability", "resources", "new beginning"] },
 ];
+
+include!(concat!(env!("OUT_DIR"), "/generated_cards.rs"));
+
+pub static CARDS: Lazy<&'static [TarotCard]> = Lazy::new(|| {
+    let mut by_slug: HashMap<&'static str, TarotCard> = HashMap::new();
+
+    for card in MANUAL_CARDS {
+        by_slug.insert(card.slug, *card);
+    }
+
+    for card in AUTO_CARDS {
+        by_slug.insert(card.slug, *card);
+    }
+
+    let mut merged: Vec<TarotCard> = by_slug.values().copied().collect();
+    merged.sort_by(|a, b| a.name.cmp(b.name));
+    Box::leak(merged.into_boxed_slice())
+});

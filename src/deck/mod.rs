@@ -12,9 +12,11 @@
 
 mod cards;
 
-use rand::Rng;
 use rand::seq::SliceRandom;
 use rand::thread_rng;
+use rand::Rng;
+use std::error::Error;
+use std::fmt;
 
 pub use cards::CARDS;
 
@@ -135,34 +137,78 @@ pub struct Deck {
 }
 
 impl Deck {
-    pub const fn new(cards: &'static [TarotCard]) -> Self {
+    pub fn new(cards: &'static [TarotCard]) -> Self {
         Self { cards }
     }
 
-    pub const fn standard() -> Self {
-        Self::new(CARDS)
+    pub fn standard() -> Self {
+        Self::new(*CARDS)
     }
 
+    #[allow(dead_code)]
     pub fn len(&self) -> usize {
         self.cards.len()
     }
 
+    #[allow(dead_code)]
     pub fn cards(&self) -> &'static [TarotCard] {
         self.cards
     }
 
-    pub fn draw_random(self, count: DrawCount) -> Vec<DrawnCard> {
+    pub fn draw_random(self, count: DrawCount) -> Result<Vec<DrawnCard>, DeckError> {
+        let available = self.cards.len();
+        if available == 0 {
+            return Err(DeckError::EmptyDeck);
+        }
+
+        let requested = count.as_usize();
+        if requested > available {
+            return Err(DeckError::InsufficientCards {
+                requested,
+                available,
+            });
+        }
+
         let mut rng = thread_rng();
         let mut indices: Vec<usize> = (0..self.cards.len()).collect();
         indices.shuffle(&mut rng);
 
-        indices
+        let cards = indices
             .into_iter()
             .take(count.as_usize())
             .map(|index| DrawnCard {
                 card: &self.cards[index],
                 orientation: Orientation::random(&mut rng),
             })
-            .collect()
+            .collect();
+
+        Ok(cards)
     }
 }
+
+/// Errors that can occur when requesting a reading from the deck.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum DeckError {
+    EmptyDeck,
+    InsufficientCards { requested: usize, available: usize },
+}
+
+impl fmt::Display for DeckError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            DeckError::EmptyDeck => write!(
+                f,
+                "No cards available. Drop your .webp files inside the assets/ folder and rebuild."
+            ),
+            DeckError::InsufficientCards {
+                requested,
+                available,
+            } => write!(
+                f,
+                "Requested {requested} cards but only {available} exist in the deck."
+            ),
+        }
+    }
+}
+
+impl Error for DeckError {}

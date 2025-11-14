@@ -1,0 +1,784 @@
+[
+  {
+    "slug": "ace-of-cups",
+    "name": "Ace of Cups",
+    "upright": "Pure emotion and intuition surges in; accept this fresh invitation around relationships and emotional flow.",
+    "reversed": "Blocked emotion and intuition or hesitation keeps the seed from sprouting.",
+    "keywords": [
+      "beginning",
+      "potential",
+      "gift",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "ace-of-pentacles",
+    "name": "Ace of Pentacles",
+    "upright": "Pure stability and material progress surges in; accept this fresh invitation around resources, body, and practical work.",
+    "reversed": "Blocked stability and material progress or hesitation keeps the seed from sprouting.",
+    "keywords": [
+      "beginning",
+      "potential",
+      "gift",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "ace-of-swords",
+    "name": "Ace of Swords",
+    "upright": "Pure clarity and discernment surges in; accept this fresh invitation around thoughts, communication, and truth.",
+    "reversed": "Blocked clarity and discernment or hesitation keeps the seed from sprouting.",
+    "keywords": [
+      "beginning",
+      "potential",
+      "gift",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "ace-of-wands",
+    "name": "Ace of Wands",
+    "upright": "Pure momentum and creative fire surges in; accept this fresh invitation around inspiration, ambition, and passion.",
+    "reversed": "Blocked momentum and creative fire or hesitation keeps the seed from sprouting.",
+    "keywords": [
+      "beginning",
+      "potential",
+      "gift",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "eight-of-cups",
+    "name": "Eight of Cups",
+    "upright": "Disciplined action moves you forward in relationships and emotional flow; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement\u2014adjust the route.",
+    "keywords": [
+      "progress",
+      "focus",
+      "movement",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "eight-of-pentacles",
+    "name": "Eight of Pentacles",
+    "upright": "Disciplined action moves you forward in resources, body, and practical work; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement\u2014adjust the route.",
+    "keywords": [
+      "progress",
+      "focus",
+      "movement",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "eight-of-swords",
+    "name": "Eight of Swords",
+    "upright": "Disciplined action moves you forward in thoughts, communication, and truth; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement\u2014adjust the route.",
+    "keywords": [
+      "progress",
+      "focus",
+      "movement",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "eight-of-wands",
+    "name": "Eight of Wands",
+    "upright": "Disciplined action moves you forward in inspiration, ambition, and passion; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement\u2014adjust the route.",
+    "keywords": [
+      "progress",
+      "focus",
+      "movement",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "five-of-cups",
+    "name": "Five of Cups",
+    "upright": "Challenge shakes your relationship with relationships and emotional flow; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": [
+      "conflict",
+      "lesson",
+      "adjustment",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "five-of-pentacles",
+    "name": "Five of Pentacles",
+    "upright": "Challenge shakes your relationship with resources, body, and practical work; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": [
+      "conflict",
+      "lesson",
+      "adjustment",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "five-of-swords",
+    "name": "Five of Swords",
+    "upright": "Challenge shakes your relationship with thoughts, communication, and truth; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": [
+      "conflict",
+      "lesson",
+      "adjustment",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "five-of-wands",
+    "name": "Five of Wands",
+    "upright": "Challenge shakes your relationship with inspiration, ambition, and passion; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": [
+      "conflict",
+      "lesson",
+      "adjustment",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "four-of-cups",
+    "name": "Four of Cups",
+    "upright": "A grounding pause integrates recent lessons about relationships and emotional flow.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": [
+      "stability",
+      "pause",
+      "assessment",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "four-of-pentacles",
+    "name": "Four of Pentacles",
+    "upright": "A grounding pause integrates recent lessons about resources, body, and practical work.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": [
+      "stability",
+      "pause",
+      "assessment",
+      "resources",
+      "work"
+    ]
+  },
+  {
+    "slug": "four-of-swords",
+    "name": "Four of Swords",
+    "upright": "A grounding pause integrates recent lessons about thoughts, communication, and truth.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": [
+      "stability",
+      "pause",
+      "assessment",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "four-of-wands",
+    "name": "Four of Wands",
+    "upright": "A grounding pause integrates recent lessons about inspiration, ambition, and passion.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": [
+      "stability",
+      "pause",
+      "assessment",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "king-of-cups",
+    "name": "King of Cups",
+    "upright": "Visionary stewardship directs relationships and emotional flow with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit relationships and emotional flow; invite flexibility.",
+    "keywords": [
+      "authority",
+      "strategy",
+      "influence",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "king-of-pentacles",
+    "name": "King of Pentacles",
+    "upright": "Visionary stewardship directs resources, body, and practical work with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit resources, body, and practical work; invite flexibility.",
+    "keywords": [
+      "authority",
+      "strategy",
+      "influence",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "king-of-swords",
+    "name": "King of Swords",
+    "upright": "Visionary stewardship directs thoughts, communication, and truth with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit thoughts, communication, and truth; invite flexibility.",
+    "keywords": [
+      "authority",
+      "strategy",
+      "influence",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "king-of-wands",
+    "name": "King of Wands",
+    "upright": "Visionary stewardship directs inspiration, ambition, and passion with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit inspiration, ambition, and passion; invite flexibility.",
+    "keywords": [
+      "authority",
+      "strategy",
+      "influence",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "knight-of-cups",
+    "name": "Knight of Cups",
+    "upright": "Driven pursuit propels relationships and emotional flow; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws relationships and emotional flow off course.",
+    "keywords": [
+      "action",
+      "pursuit",
+      "mission",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "knight-of-pentacles",
+    "name": "Knight of Pentacles",
+    "upright": "Driven pursuit propels resources, body, and practical work; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws resources, body, and practical work off course.",
+    "keywords": [
+      "action",
+      "pursuit",
+      "mission",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "knight-of-swords",
+    "name": "Knight of Swords",
+    "upright": "Driven pursuit propels thoughts, communication, and truth; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws thoughts, communication, and truth off course.",
+    "keywords": [
+      "action",
+      "pursuit",
+      "mission",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "knight-of-wands",
+    "name": "Knight of Wands",
+    "upright": "Driven pursuit propels inspiration, ambition, and passion; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws inspiration, ambition, and passion off course.",
+    "keywords": [
+      "action",
+      "pursuit",
+      "mission",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "nine-of-cups",
+    "name": "Nine of Cups",
+    "upright": "Self-mastery and satisfaction bloom within relationships and emotional flow; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": [
+      "fulfillment",
+      "gratitude",
+      "culmination",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "nine-of-pentacles",
+    "name": "Nine of Pentacles",
+    "upright": "Self-mastery and satisfaction bloom within resources, body, and practical work; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": [
+      "fulfillment",
+      "gratitude",
+      "culmination",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "nine-of-swords",
+    "name": "Nine of Swords",
+    "upright": "Self-mastery and satisfaction bloom within thoughts, communication, and truth; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": [
+      "fulfillment",
+      "gratitude",
+      "culmination",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "nine-of-wands",
+    "name": "Nine of Wands",
+    "upright": "Self-mastery and satisfaction bloom within inspiration, ambition, and passion; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": [
+      "fulfillment",
+      "gratitude",
+      "culmination",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "page-of-cups",
+    "name": "Page of Cups",
+    "upright": "A curious messenger explores new relationships and emotional flow; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons\u2014slow down and listen.",
+    "keywords": [
+      "student",
+      "message",
+      "fresh-energy",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "page-of-pentacles",
+    "name": "Page of Pentacles",
+    "upright": "A curious messenger explores new resources, body, and practical work; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons\u2014slow down and listen.",
+    "keywords": [
+      "student",
+      "message",
+      "fresh-energy",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "page-of-swords",
+    "name": "Page of Swords",
+    "upright": "A curious messenger explores new thoughts, communication, and truth; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons\u2014slow down and listen.",
+    "keywords": [
+      "student",
+      "message",
+      "fresh-energy",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "page-of-wands",
+    "name": "Page of Wands",
+    "upright": "A curious messenger explores new inspiration, ambition, and passion; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons\u2014slow down and listen.",
+    "keywords": [
+      "student",
+      "message",
+      "fresh-energy",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "queen-of-cups",
+    "name": "Queen of Cups",
+    "upright": "Magnetic mastery nurtures relationships and emotional flow with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries\u2014recenter your authority.",
+    "keywords": [
+      "leadership",
+      "maturity",
+      "intuition",
+      "emotion",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "queen-of-pentacles",
+    "name": "Queen of Pentacles",
+    "upright": "Magnetic mastery nurtures resources, body, and practical work with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries\u2014recenter your authority.",
+    "keywords": [
+      "leadership",
+      "maturity",
+      "intuition",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "queen-of-swords",
+    "name": "Queen of Swords",
+    "upright": "Magnetic mastery nurtures thoughts, communication, and truth with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries\u2014recenter your authority.",
+    "keywords": [
+      "leadership",
+      "maturity",
+      "intuition",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "queen-of-wands",
+    "name": "Queen of Wands",
+    "upright": "Magnetic mastery nurtures inspiration, ambition, and passion with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries\u2014recenter your authority.",
+    "keywords": [
+      "leadership",
+      "maturity",
+      "intuition",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "seven-of-cups",
+    "name": "Seven of Cups",
+    "upright": "Vision and evaluation refine how you pursue relationships and emotional flow; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds relationships and emotional flow; commit to one path.",
+    "keywords": [
+      "vision",
+      "strategy",
+      "evaluation",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "seven-of-pentacles",
+    "name": "Seven of Pentacles",
+    "upright": "Vision and evaluation refine how you pursue resources, body, and practical work; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds resources, body, and practical work; commit to one path.",
+    "keywords": [
+      "vision",
+      "strategy",
+      "evaluation",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "seven-of-swords",
+    "name": "Seven of Swords",
+    "upright": "Vision and evaluation refine how you pursue thoughts, communication, and truth; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds thoughts, communication, and truth; commit to one path.",
+    "keywords": [
+      "vision",
+      "strategy",
+      "evaluation",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "seven-of-wands",
+    "name": "Seven of Wands",
+    "upright": "Vision and evaluation refine how you pursue inspiration, ambition, and passion; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds inspiration, ambition, and passion; commit to one path.",
+    "keywords": [
+      "vision",
+      "strategy",
+      "evaluation",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "six-of-cups",
+    "name": "Six of Cups",
+    "upright": "Kind exchanges and generosity bring harmony to relationships and emotional flow.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": [
+      "harmony",
+      "support",
+      "movement",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "six-of-pentacles",
+    "name": "Six of Pentacles",
+    "upright": "Kind exchanges and generosity bring harmony to resources, body, and practical work.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": [
+      "harmony",
+      "support",
+      "movement",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "six-of-swords",
+    "name": "Six of Swords",
+    "upright": "Kind exchanges and generosity bring harmony to thoughts, communication, and truth.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": [
+      "harmony",
+      "support",
+      "movement",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "six-of-wands",
+    "name": "Six of Wands",
+    "upright": "Kind exchanges and generosity bring harmony to inspiration, ambition, and passion.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": [
+      "harmony",
+      "support",
+      "movement",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "ten-of-cups",
+    "name": "Ten of Cups",
+    "upright": "Legacy energy completes a cycle in relationships and emotional flow; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": [
+      "completion",
+      "legacy",
+      "wholeness",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "ten-of-pentacles",
+    "name": "Ten of Pentacles",
+    "upright": "Legacy energy completes a cycle in resources, body, and practical work; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": [
+      "completion",
+      "legacy",
+      "wholeness",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "ten-of-swords",
+    "name": "Ten of Swords",
+    "upright": "Legacy energy completes a cycle in thoughts, communication, and truth; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": [
+      "completion",
+      "legacy",
+      "wholeness",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "ten-of-wands",
+    "name": "Ten of Wands",
+    "upright": "Legacy energy completes a cycle in inspiration, ambition, and passion; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": [
+      "completion",
+      "legacy",
+      "wholeness",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "three-of-cups",
+    "name": "Three of Cups",
+    "upright": "Co-creation multiplies relationships and emotional flow; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows relationships and emotional flow; revisit shared values.",
+    "keywords": [
+      "growth",
+      "community",
+      "expression",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "three-of-pentacles",
+    "name": "Three of Pentacles",
+    "upright": "Co-creation multiplies resources, body, and practical work; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows resources, body, and practical work; revisit shared values.",
+    "keywords": [
+      "growth",
+      "community",
+      "expression",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "three-of-swords",
+    "name": "Three of Swords",
+    "upright": "Co-creation multiplies thoughts, communication, and truth; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows thoughts, communication, and truth; revisit shared values.",
+    "keywords": [
+      "growth",
+      "community",
+      "expression",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "three-of-wands",
+    "name": "Three of Wands",
+    "upright": "Co-creation multiplies inspiration, ambition, and passion; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows inspiration, ambition, and passion; revisit shared values.",
+    "keywords": [
+      "growth",
+      "community",
+      "expression",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  },
+  {
+    "slug": "two-of-cups",
+    "name": "Two of Cups",
+    "upright": "Balance and choice shape your relationships and emotional flow; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around relationships and emotional flow needs honest recalibration.",
+    "keywords": [
+      "duality",
+      "choice",
+      "partnership",
+      "emotion",
+      "intuition",
+      "relationships"
+    ]
+  },
+  {
+    "slug": "two-of-pentacles",
+    "name": "Two of Pentacles",
+    "upright": "Balance and choice shape your resources, body, and practical work; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around resources, body, and practical work needs honest recalibration.",
+    "keywords": [
+      "duality",
+      "choice",
+      "partnership",
+      "resources",
+      "work",
+      "stability"
+    ]
+  },
+  {
+    "slug": "two-of-swords",
+    "name": "Two of Swords",
+    "upright": "Balance and choice shape your thoughts, communication, and truth; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around thoughts, communication, and truth needs honest recalibration.",
+    "keywords": [
+      "duality",
+      "choice",
+      "partnership",
+      "mind",
+      "clarity",
+      "truth"
+    ]
+  },
+  {
+    "slug": "two-of-wands",
+    "name": "Two of Wands",
+    "upright": "Balance and choice shape your inspiration, ambition, and passion; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around inspiration, ambition, and passion needs honest recalibration.",
+    "keywords": [
+      "duality",
+      "choice",
+      "partnership",
+      "passion",
+      "drive",
+      "creativity"
+    ]
+  }
+]

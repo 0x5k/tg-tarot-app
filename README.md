@@ -36,7 +36,9 @@ watches the project for live reloads.
 - [`src/ui/`](src/ui) – small, well-documented UI components (`DrawControls`
   and `CardGrid`).
 - [`src/telegram.rs`](src/telegram.rs) – a lightweight bridge to the
-  Telegram WebApp API that reads theme colors on launch.
+  Telegram WebApp API that reads theme colors on launch and now exposes
+  `use_main_button`/`use_back_button` hooks so you can manage Telegram's
+  native buttons from Yew components.
 - [`static/styles.css`](static/styles.css) – global styling shared across the
   app (copied into the `dist/` folder by Trunk).
 - [`Trunk.toml`](Trunk.toml) & [`index.html`](index.html) – Trunk build config
