@@ -54,9 +54,9 @@ impl DrawCount {
 
     pub fn label(self) -> &'static str {
         match self {
-            DrawCount::One => "Single",
-            DrawCount::Three => "Three Cards",
-            DrawCount::Five => "Five Cards",
+            DrawCount::One => "Single card",
+            DrawCount::Three => "Three cards",
+            DrawCount::Five => "Five cards",
         }
     }
 

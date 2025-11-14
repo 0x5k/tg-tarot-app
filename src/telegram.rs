@@ -2,7 +2,9 @@ use yew::prelude::*;
 
 #[cfg(target_arch = "wasm32")]
 use telegram_webapp_sdk::{
-    core::{context::TelegramContext, init::try_init_sdk, types::theme_params::TelegramThemeParams},
+    core::{
+        context::TelegramContext, init::try_init_sdk, types::theme_params::TelegramThemeParams,
+    },
     webapp::TelegramWebApp,
 };
 
@@ -24,6 +26,12 @@ pub struct TelegramTheme {
     pub button_text_color: Option<String>,
 }
 
+#[derive(Debug, Clone, Default)]
+pub struct TelegramSetup {
+    pub theme: TelegramTheme,
+    pub available: bool,
+}
+
 #[cfg(target_arch = "wasm32")]
 impl From<TelegramThemeParams> for TelegramTheme {
     fn from(params: TelegramThemeParams) -> Self {
@@ -32,26 +40,6 @@ impl From<TelegramThemeParams> for TelegramTheme {
             text_color: params.text_color,
             button_color: params.button_color,
             button_text_color: params.button_text_color,
-        }
-    }
-}
-
-/// Declarative state for the Telegram MainButton.
-#[derive(Clone, PartialEq)]
-pub struct MainButtonState {
-    pub text: AttrValue,
-    pub visible: bool,
-    pub enabled: bool,
-    pub loading: bool,
-}
-
-impl Default for MainButtonState {
-    fn default() -> Self {
-        Self {
-            text: AttrValue::from("Continue"),
-            visible: false,
-            enabled: true,
-            loading: false,
         }
     }
 }
@@ -66,13 +54,13 @@ pub struct BackButtonState {
 ///
 /// The function is safe to call in a regular browser – it falls back to the
 /// default palette when Telegram's global object is missing.
-pub fn init_web_app() -> TelegramTheme {
+pub fn init_web_app() -> TelegramSetup {
     #[cfg(target_arch = "wasm32")]
     {
+        let mut setup = TelegramSetup::default();
         match try_init_sdk() {
-            Ok(true) => {}
-            Ok(false) => return TelegramTheme::default(),
-            Err(_) => return TelegramTheme::default(),
+            Ok(true) => setup.available = true,
+            Ok(false) | Err(_) => return setup,
         }
 
         if let Some(app) = TelegramWebApp::instance() {
@@ -81,11 +69,13 @@ pub fn init_web_app() -> TelegramTheme {
         }
 
         if let Some(theme) = TelegramContext::get(|ctx| ctx.theme_params.clone()) {
-            return TelegramTheme::from(theme);
+            setup.theme = TelegramTheme::from(theme);
         }
+
+        return setup;
     }
 
-    TelegramTheme::default()
+    TelegramSetup::default()
 }
 
 /// Converts the theme into inline CSS so the main layout matches Telegram.
@@ -109,28 +99,6 @@ pub fn theme_style(theme: &TelegramTheme) -> AttrValue {
     }
 
     styles.join(";").into()
-}
-
-/// Synchronises the Telegram MainButton with the provided state and handler.
-#[hook]
-pub fn use_main_button(state: MainButtonState, on_click: Callback<()>) {
-    #[cfg(target_arch = "wasm32")]
-    {
-        use_effect_with(state, |state| {
-            sync_main_button(state);
-            || ()
-        });
-
-        use_effect_with(on_click, |callback| {
-            let guard = register_main_button_handler(callback.clone());
-            move || drop(guard)
-        });
-    }
-
-    #[cfg(not(target_arch = "wasm32"))]
-    {
-        let _ = (state, on_click);
-    }
 }
 
 /// Synchronises the Telegram BackButton with the provided state and handler.
@@ -236,32 +204,6 @@ fn web_app_object() -> Option<wasm_bindgen::JsValue> {
 }
 
 #[cfg(target_arch = "wasm32")]
-fn sync_main_button(state: &MainButtonState) {
-    if let Some(app) = TelegramWebApp::instance() {
-        let text = state.text.to_string();
-        let _ = app.set_main_button_text(&text);
-
-        if state.visible {
-            let _ = app.show_main_button();
-        } else {
-            let _ = app.hide_main_button();
-        }
-
-        if state.enabled {
-            let _ = app.enable_main_button();
-        } else {
-            let _ = app.disable_main_button();
-        }
-
-        if state.loading {
-            let _ = app.show_main_button_progress(false);
-        } else {
-            let _ = app.hide_main_button_progress();
-        }
-    }
-}
-
-#[cfg(target_arch = "wasm32")]
 fn sync_back_button(state: &BackButtonState) {
     if let Some(app) = TelegramWebApp::instance() {
         if state.visible {
@@ -270,12 +212,6 @@ fn sync_back_button(state: &BackButtonState) {
             let _ = app.hide_back_button();
         }
     }
-}
-
-#[cfg(target_arch = "wasm32")]
-fn register_main_button_handler(callback: Callback<()>) -> Option<EventHandle<dyn FnMut()>> {
-    let app = TelegramWebApp::instance()?;
-    app.set_main_button_callback(move || callback.emit(())).ok()
 }
 
 #[cfg(target_arch = "wasm32")]

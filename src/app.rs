@@ -4,8 +4,7 @@ use crate::deck::{Deck, DrawCount};
 use crate::feedback::Feedback;
 use crate::reading::Reading;
 use crate::telegram::{
-    copy_to_clipboard, init_web_app, theme_style, use_back_button, use_main_button,
-    BackButtonState, MainButtonState, TelegramTheme,
+    copy_to_clipboard, init_web_app, theme_style, use_back_button, BackButtonState, TelegramSetup,
 };
 use crate::ui::{CardGrid, DrawControls, StatusBanner};
 
@@ -14,12 +13,12 @@ pub fn app() -> Html {
     let draw_count = use_state(|| DrawCount::One);
     let reading = use_state(Reading::default);
     let feedback = use_state(Feedback::default);
-    let theme = use_state(TelegramTheme::default);
+    let telegram = use_state(TelegramSetup::default);
 
     {
-        let theme = theme.clone();
+        let telegram = telegram.clone();
         use_effect_with((), move |_| {
-            theme.set(init_web_app());
+            telegram.set(init_web_app());
             || ()
         });
     }
@@ -83,21 +82,17 @@ pub fn app() -> Html {
     };
 
     let has_cards = reading.has_cards();
+    let is_telegram = telegram.available;
 
-    use_main_button(
-        MainButtonState {
-            text: AttrValue::from("Draw cards"),
-            visible: true,
-            enabled: true,
-            loading: false,
+    use_back_button(
+        BackButtonState {
+            visible: is_telegram && has_cards,
         },
-        handle_draw.clone(),
+        handle_reset.clone(),
     );
 
-    use_back_button(BackButtonState { visible: has_cards }, handle_reset.clone());
-
     html! {
-        <main class="layout" style={theme_style(&*theme)}>
+        <main class="layout" style={theme_style(&telegram.theme)}>
             <StatusBanner
                 status={feedback.status_text().map(str::to_owned)}
                 error={feedback.error_text().map(str::to_owned)}

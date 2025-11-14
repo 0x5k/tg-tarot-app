@@ -9,6 +9,8 @@ pub struct DrawControlsProps {
     pub on_draw: Callback<()>,
     pub on_copy: Callback<()>,
     pub can_copy: bool,
+    #[prop_or(true)]
+    pub show_draw_button: bool,
 }
 
 #[function_component(DrawControls)]
@@ -19,6 +21,7 @@ pub fn draw_controls(props: &DrawControlsProps) -> Html {
         on_draw,
         on_copy,
         can_copy,
+        show_draw_button,
     } = props;
 
     let handle_draw = {
@@ -40,13 +43,21 @@ pub fn draw_controls(props: &DrawControlsProps) -> Html {
                 { for DrawCount::ALL.iter().map(|count| render_toggle(*count, *selected, on_select)) }
             </div>
             <div class="controls-buttons">
-                <button
-                    type="button"
-                    class="button-primary"
-                    onclick={handle_draw}
-                >
-                    { "Draw cards" }
-                </button>
+                {
+                    if *show_draw_button {
+                        html! {
+                            <button
+                                type="button"
+                                class="button-primary"
+                                onclick={handle_draw.clone()}
+                            >
+                                { "Draw cards" }
+                            </button>
+                        }
+                    } else {
+                        Html::default()
+                    }
+                }
                 <button
                     type="button"
                     class="button-secondary"

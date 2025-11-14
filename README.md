@@ -92,6 +92,7 @@ Vercel can deploy the static `dist/` directory directly. The repo ships with
 Telegram Mini Apps expect HTTPS, so a Vercel deployment works out of the box
 once the project is connected. After deployment, use your Vercel URL as the
 WebApp URL in BotFather.
+If you change your mind later and want the Telegram MainButton back, just toggle the visible flag inside src/app.rs:88-96.
 
 ## Next steps
 
