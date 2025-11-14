@@ -15,6 +15,18 @@ fi
 # Install WASM target
 rustup target add wasm32-unknown-unknown
 
-# Install trunk
-cargo install trunk --version 0.19.0
+# Install trunk - use version 0.16.0 which is known to compile reliably
+# This avoids dependency compatibility issues with newer versions
+echo "Installing trunk version 0.16.0..."
+if ! cargo install trunk --version 0.16.0 --locked; then
+    echo "Cargo install failed, trying to download pre-built binary..."
+    # Download pre-built trunk binary for Linux x86_64
+    mkdir -p "$HOME/.cargo/bin"
+    TRUNK_VERSION="v0.16.0"
+    ARCH="x86_64-unknown-linux-musl"
+    curl -L "https://github.com/thedodd/trunk/releases/download/${TRUNK_VERSION}/trunk-${ARCH}.tar.gz" | \
+        tar -xz -C "$HOME/.cargo/bin"
+    chmod +x "$HOME/.cargo/bin/trunk" || \
+    { echo "Failed to install trunk via cargo or binary download" && exit 1; }
+fi
 

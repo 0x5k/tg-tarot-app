@@ -80,7 +80,7 @@ handle the build process.
 3. Vercel will automatically detect the `vercel.json` configuration
 4. The build will:
    - Install Rust toolchain
-   - Install trunk (version 0.19.0)
+   - Install trunk (version 0.18.0 or 0.17.0 if that fails)
    - Build the WASM bundle
    - Output to the `dist/` directory
 

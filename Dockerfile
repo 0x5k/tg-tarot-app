@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install build tooling.
 RUN rustup target add wasm32-unknown-unknown && \
-    cargo install trunk --version 0.19.0
+    cargo install trunk --version 0.16.0 --locked
 
 # Cache dependencies first by copying manifests.
 COPY Cargo.toml Cargo.lock Trunk.toml ./
