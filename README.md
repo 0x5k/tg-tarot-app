@@ -69,19 +69,31 @@ docker run -p 8080:8080 tg-tarot
 
 ### Vercel (static site)
 
-Vercel can deploy the generated static assets. Configure the project as
-“Other” and use the following build command:
+Vercel can deploy the generated static assets automatically. The project includes
+configuration files (`vercel.json`, `vercel-install.sh`, `vercel-build.sh`) that
+handle the build process.
 
-```bash
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source "$HOME/.cargo/env"
-rustup target add wasm32-unknown-unknown
-cargo install trunk
-trunk build --release --public-url .
-```
+**Quick deployment:**
 
-Set **Output Directory** to `dist`. Telegram Mini Apps expect HTTPS, so a
-Vercel branch deployment works out of the box once the project is connected.
+1. Push your code to GitHub (or connect via Vercel CLI)
+2. Import the project in Vercel
+3. Vercel will automatically detect the `vercel.json` configuration
+4. The build will:
+   - Install Rust toolchain
+   - Install trunk (version 0.19.0)
+   - Build the WASM bundle
+   - Output to the `dist/` directory
+
+**Manual configuration (if needed):**
+
+If auto-detection doesn't work, configure the project as "Other" with:
+- **Build Command:** `bash vercel-build.sh`
+- **Install Command:** `bash vercel-install.sh`
+- **Output Directory:** `dist`
+
+Telegram Mini Apps expect HTTPS, so a Vercel deployment works out of the box
+once the project is connected. After deployment, use your Vercel URL as the
+WebApp URL in BotFather.
 
 ## Next steps
 
