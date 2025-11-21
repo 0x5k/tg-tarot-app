@@ -113,6 +113,13 @@ impl DrawnCard {
         self.card.name
     }
 
+    pub fn full_name(&self) -> String {
+        match self.orientation {
+            Orientation::Upright => self.card.name.to_string(),
+            Orientation::Reversed => format!("{} reversed", self.card.name),
+        }
+    }
+
     pub fn image_path(&self) -> String {
         self.card.image_path()
     }
@@ -143,16 +150,6 @@ impl Deck {
 
     pub fn standard() -> Self {
         Self::new(*CARDS)
-    }
-
-    #[allow(dead_code)]
-    pub fn len(&self) -> usize {
-        self.cards.len()
-    }
-
-    #[allow(dead_code)]
-    pub fn cards(&self) -> &'static [TarotCard] {
-        self.cards
     }
 
     pub fn draw_random(self, count: DrawCount) -> Result<Vec<DrawnCard>, DeckError> {

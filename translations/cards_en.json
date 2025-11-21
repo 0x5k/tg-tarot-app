@@ -1,0 +1,392 @@
+{
+  "ace-of-cups": {
+    "upright": "Pure emotion and intuition surges in; accept this fresh invitation around relationships and emotional flow.",
+    "reversed": "Blocked emotion and intuition or hesitation keeps the seed from sprouting.",
+    "keywords": ["beginning", "potential", "gift", "emotion", "intuition", "relationships"]
+  },
+  "ace-of-pentacles": {
+    "upright": "Pure stability and material progress surges in; accept this fresh invitation around resources, body, and practical work.",
+    "reversed": "Blocked stability and material progress or hesitation keeps the seed from sprouting.",
+    "keywords": ["beginning", "potential", "gift", "resources", "work", "stability"]
+  },
+  "ace-of-swords": {
+    "upright": "Pure clarity and discernment surges in; accept this fresh invitation around thoughts, communication, and truth.",
+    "reversed": "Blocked clarity and discernment or hesitation keeps the seed from sprouting.",
+    "keywords": ["beginning", "potential", "gift", "mind", "clarity", "truth"]
+  },
+  "ace-of-wands": {
+    "upright": "Pure momentum and creative fire surges in; accept this fresh invitation around inspiration, ambition, and passion.",
+    "reversed": "Blocked momentum and creative fire or hesitation keeps the seed from sprouting.",
+    "keywords": ["beginning", "potential", "gift", "passion", "drive", "creativity"]
+  },
+  "two-of-cups": {
+    "upright": "Balance and choice shape your relationships and emotional flow; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around relationships and emotional flow needs honest recalibration.",
+    "keywords": ["duality", "choice", "partnership", "emotion", "intuition", "relationships"]
+  },
+  "two-of-pentacles": {
+    "upright": "Balance and choice shape your resources, body, and practical work; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around resources, body, and practical work needs honest recalibration.",
+    "keywords": ["duality", "choice", "partnership", "resources", "work", "stability"]
+  },
+  "two-of-swords": {
+    "upright": "Balance and choice shape your thoughts, communication, and truth; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around thoughts, communication, and truth needs honest recalibration.",
+    "keywords": ["duality", "choice", "partnership", "mind", "clarity", "truth"]
+  },
+  "two-of-wands": {
+    "upright": "Balance and choice shape your inspiration, ambition, and passion; harmonize two priorities with care.",
+    "reversed": "Indecision or imbalance around inspiration, ambition, and passion needs honest recalibration.",
+    "keywords": ["duality", "choice", "partnership", "passion", "drive", "creativity"]
+  },
+  "three-of-cups": {
+    "upright": "Co-creation multiplies relationships and emotional flow; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows relationships and emotional flow; revisit shared values.",
+    "keywords": ["growth", "community", "expression", "emotion", "intuition", "relationships"]
+  },
+  "three-of-pentacles": {
+    "upright": "Co-creation multiplies resources, body, and practical work; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows resources, body, and practical work; revisit shared values.",
+    "keywords": ["growth", "community", "expression", "resources", "work", "stability"]
+  },
+  "three-of-swords": {
+    "upright": "Co-creation multiplies thoughts, communication, and truth; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows thoughts, communication, and truth; revisit shared values.",
+    "keywords": ["growth", "community", "expression", "mind", "clarity", "truth"]
+  },
+  "three-of-wands": {
+    "upright": "Co-creation multiplies inspiration, ambition, and passion; collaborate and celebrate early progress.",
+    "reversed": "Misalignment among allies slows inspiration, ambition, and passion; revisit shared values.",
+    "keywords": ["growth", "community", "expression", "passion", "drive", "creativity"]
+  },
+  "four-of-cups": {
+    "upright": "A grounding pause integrates recent lessons about relationships and emotional flow.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": ["stability", "pause", "assessment", "emotion", "intuition", "relationships"]
+  },
+  "four-of-pentacles": {
+    "upright": "A grounding pause integrates recent lessons about resources, body, and practical work.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": ["stability", "pause", "assessment", "resources", "work"]
+  },
+  "four-of-swords": {
+    "upright": "A grounding pause integrates recent lessons about thoughts, communication, and truth.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": ["stability", "pause", "assessment", "mind", "clarity", "truth"]
+  },
+  "four-of-wands": {
+    "upright": "A grounding pause integrates recent lessons about inspiration, ambition, and passion.",
+    "reversed": "Stagnation or apathy fades once you reengage intentionally.",
+    "keywords": ["stability", "pause", "assessment", "passion", "drive", "creativity"]
+  },
+  "five-of-cups": {
+    "upright": "Challenge shakes your relationship with relationships and emotional flow; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": ["conflict", "lesson", "adjustment", "emotion", "intuition", "relationships"]
+  },
+  "five-of-pentacles": {
+    "upright": "Challenge shakes your relationship with resources, body, and practical work; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": ["conflict", "lesson", "adjustment", "resources", "work", "stability"]
+  },
+  "five-of-swords": {
+    "upright": "Challenge shakes your relationship with thoughts, communication, and truth; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": ["conflict", "lesson", "adjustment", "mind", "clarity", "truth"]
+  },
+  "five-of-wands": {
+    "upright": "Challenge shakes your relationship with inspiration, ambition, and passion; process the disruption.",
+    "reversed": "Lessons integrate and resilience grows after the hardship.",
+    "keywords": ["conflict", "lesson", "adjustment", "passion", "drive", "creativity"]
+  },
+  "six-of-cups": {
+    "upright": "Kind exchanges and generosity bring harmony to relationships and emotional flow.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": ["harmony", "support", "movement", "emotion", "intuition", "relationships"]
+  },
+  "six-of-pentacles": {
+    "upright": "Kind exchanges and generosity bring harmony to resources, body, and practical work.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": ["harmony", "support", "movement", "resources", "work", "stability"]
+  },
+  "six-of-swords": {
+    "upright": "Kind exchanges and generosity bring harmony to thoughts, communication, and truth.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": ["harmony", "support", "movement", "mind", "clarity", "truth"]
+  },
+  "six-of-wands": {
+    "upright": "Kind exchanges and generosity bring harmony to inspiration, ambition, and passion.",
+    "reversed": "Unequal flow or nostalgia keeps you stuck; rebalance giving and receiving.",
+    "keywords": ["harmony", "support", "movement", "passion", "drive", "creativity"]
+  },
+  "seven-of-cups": {
+    "upright": "Vision and evaluation refine how you pursue relationships and emotional flow; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds relationships and emotional flow; commit to one path.",
+    "keywords": ["vision", "strategy", "evaluation", "emotion", "intuition", "relationships"]
+  },
+  "seven-of-pentacles": {
+    "upright": "Vision and evaluation refine how you pursue resources, body, and practical work; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds resources, body, and practical work; commit to one path.",
+    "keywords": ["vision", "strategy", "evaluation", "resources", "work", "stability"]
+  },
+  "seven-of-swords": {
+    "upright": "Vision and evaluation refine how you pursue thoughts, communication, and truth; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds thoughts, communication, and truth; commit to one path.",
+    "keywords": ["vision", "strategy", "evaluation", "mind", "clarity", "truth"]
+  },
+  "seven-of-wands": {
+    "upright": "Vision and evaluation refine how you pursue inspiration, ambition, and passion; choose wisely.",
+    "reversed": "Scattered effort or avoidance clouds inspiration, ambition, and passion; commit to one path.",
+    "keywords": ["vision", "strategy", "evaluation", "passion", "drive", "creativity"]
+  },
+  "eight-of-cups": {
+    "upright": "Disciplined action moves you forward in relationships and emotional flow; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement—adjust the route.",
+    "keywords": ["progress", "focus", "movement", "emotion", "intuition", "relationships"]
+  },
+  "eight-of-pentacles": {
+    "upright": "Disciplined action moves you forward in resources, body, and practical work; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement—adjust the route.",
+    "keywords": ["progress", "focus", "movement", "resources", "work", "stability"]
+  },
+  "eight-of-swords": {
+    "upright": "Disciplined action moves you forward in thoughts, communication, and truth; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement—adjust the route.",
+    "keywords": ["progress", "focus", "movement", "mind", "clarity", "truth"]
+  },
+  "eight-of-wands": {
+    "upright": "Disciplined action moves you forward in inspiration, ambition, and passion; stay aligned.",
+    "reversed": "Burnout or fear of change blocks movement—adjust the route.",
+    "keywords": ["progress", "focus", "movement", "passion", "drive", "creativity"]
+  },
+  "nine-of-cups": {
+    "upright": "Self-mastery and satisfaction bloom within relationships and emotional flow; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": ["fulfillment", "gratitude", "culmination", "emotion", "intuition", "relationships"]
+  },
+  "nine-of-pentacles": {
+    "upright": "Self-mastery and satisfaction bloom within resources, body, and practical work; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": ["fulfillment", "gratitude", "culmination", "resources", "work", "stability"]
+  },
+  "nine-of-swords": {
+    "upright": "Self-mastery and satisfaction bloom within thoughts, communication, and truth; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": ["fulfillment", "gratitude", "culmination", "mind", "clarity", "truth"]
+  },
+  "nine-of-wands": {
+    "upright": "Self-mastery and satisfaction bloom within inspiration, ambition, and passion; savor the reward.",
+    "reversed": "Overindulgence or isolation shows it is time to share the wealth.",
+    "keywords": ["fulfillment", "gratitude", "culmination", "passion", "drive", "creativity"]
+  },
+  "ten-of-cups": {
+    "upright": "Legacy energy completes a cycle in relationships and emotional flow; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": ["completion", "legacy", "wholeness", "emotion", "intuition", "relationships"]
+  },
+  "ten-of-pentacles": {
+    "upright": "Legacy energy completes a cycle in resources, body, and practical work; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": ["completion", "legacy", "wholeness", "resources", "work", "stability"]
+  },
+  "ten-of-swords": {
+    "upright": "Legacy energy completes a cycle in thoughts, communication, and truth; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": ["completion", "legacy", "wholeness", "mind", "clarity", "truth"]
+  },
+  "ten-of-wands": {
+    "upright": "Legacy energy completes a cycle in inspiration, ambition, and passion; think long-term.",
+    "reversed": "Structural issues or misalignment call for redesign before continuing.",
+    "keywords": ["completion", "legacy", "wholeness", "passion", "drive", "creativity"]
+  },
+  "page-of-cups": {
+    "upright": "A curious messenger explores new relationships and emotional flow; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons—slow down and listen.",
+    "keywords": ["student", "message", "fresh-energy", "emotion", "intuition", "relationships"]
+  },
+  "page-of-pentacles": {
+    "upright": "A curious messenger explores new resources, body, and practical work; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons—slow down and listen.",
+    "keywords": ["student", "message", "fresh-energy", "resources", "work", "stability"]
+  },
+  "page-of-swords": {
+    "upright": "A curious messenger explores new thoughts, communication, and truth; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons—slow down and listen.",
+    "keywords": ["student", "message", "fresh-energy", "mind", "clarity", "truth"]
+  },
+  "page-of-wands": {
+    "upright": "A curious messenger explores new inspiration, ambition, and passion; stay teachable and playful.",
+    "reversed": "Impatience or distraction derails early lessons—slow down and listen.",
+    "keywords": ["student", "message", "fresh-energy", "passion", "drive", "creativity"]
+  },
+  "knight-of-cups": {
+    "upright": "Driven pursuit propels relationships and emotional flow; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws relationships and emotional flow off course.",
+    "keywords": ["action", "pursuit", "mission", "emotion", "intuition", "relationships"]
+  },
+  "knight-of-pentacles": {
+    "upright": "Driven pursuit propels resources, body, and practical work; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws resources, body, and practical work off course.",
+    "keywords": ["action", "pursuit", "mission", "resources", "work", "stability"]
+  },
+  "knight-of-swords": {
+    "upright": "Driven pursuit propels thoughts, communication, and truth; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws thoughts, communication, and truth off course.",
+    "keywords": ["action", "pursuit", "mission", "mind", "clarity", "truth"]
+  },
+  "knight-of-wands": {
+    "upright": "Driven pursuit propels inspiration, ambition, and passion; channel all that momentum.",
+    "reversed": "Restlessness or recklessness throws inspiration, ambition, and passion off course.",
+    "keywords": ["action", "pursuit", "mission", "passion", "drive", "creativity"]
+  },
+  "queen-of-cups": {
+    "upright": "Magnetic mastery nurtures relationships and emotional flow with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries—recenter your authority.",
+    "keywords": ["leadership", "maturity", "intuition", "emotion", "relationships"]
+  },
+  "queen-of-pentacles": {
+    "upright": "Magnetic mastery nurtures resources, body, and practical work with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries—recenter your authority.",
+    "keywords": ["leadership", "maturity", "intuition", "resources", "work", "stability"]
+  },
+  "queen-of-swords": {
+    "upright": "Magnetic mastery nurtures thoughts, communication, and truth with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries—recenter your authority.",
+    "keywords": ["leadership", "maturity", "intuition", "mind", "clarity", "truth"]
+  },
+  "queen-of-wands": {
+    "upright": "Magnetic mastery nurtures inspiration, ambition, and passion with intuition and maturity.",
+    "reversed": "Overextension or insecurity blurs boundaries—recenter your authority.",
+    "keywords": ["leadership", "maturity", "intuition", "passion", "drive", "creativity"]
+  },
+  "king-of-cups": {
+    "upright": "Visionary stewardship directs relationships and emotional flow with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit relationships and emotional flow; invite flexibility.",
+    "keywords": ["authority", "strategy", "influence", "emotion", "intuition", "relationships"]
+  },
+  "king-of-pentacles": {
+    "upright": "Visionary stewardship directs resources, body, and practical work with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit resources, body, and practical work; invite flexibility.",
+    "keywords": ["authority", "strategy", "influence", "resources", "work", "stability"]
+  },
+  "king-of-swords": {
+    "upright": "Visionary stewardship directs thoughts, communication, and truth with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit thoughts, communication, and truth; invite flexibility.",
+    "keywords": ["authority", "strategy", "influence", "mind", "clarity", "truth"]
+  },
+  "king-of-wands": {
+    "upright": "Visionary stewardship directs inspiration, ambition, and passion with confidence and integrity.",
+    "reversed": "Control issues or rigidity limit inspiration, ambition, and passion; invite flexibility.",
+    "keywords": ["authority", "strategy", "influence", "passion", "drive", "creativity"]
+  },
+  "the-fool": {
+    "upright": "New beginnings, innocence, spontaneity; trust the journey and embrace the unknown with open curiosity.",
+    "reversed": "Recklessness, naivety, missed opportunities; ground yourself before leaping.",
+    "keywords": ["beginnings", "innocence", "leap", "trust", "adventure"]
+  },
+  "the-magician": {
+    "upright": "Manifestation, resourcefulness, power; you have all the tools needed—use them with intention.",
+    "reversed": "Manipulation, untapped talent, scattered energy; refocus your abilities.",
+    "keywords": ["manifestation", "skill", "power", "action", "resourcefulness"]
+  },
+  "the-high-priestess": {
+    "upright": "Intuition, sacred knowledge, the subconscious; listen to your inner voice and trust what you know.",
+    "reversed": "Secrets, disconnection, repressed feelings; reconnect with your intuition.",
+    "keywords": ["intuition", "mystery", "inner-wisdom", "subconscious"]
+  },
+  "the-empress": {
+    "upright": "Abundance, nurturing, fertility; create beauty and embrace the natural flow of growth.",
+    "reversed": "Creative block, dependence, neglect; restore balance to give and receive.",
+    "keywords": ["abundance", "nurturing", "nature", "creativity", "fertility"]
+  },
+  "the-emperor": {
+    "upright": "Authority, structure, control; establish order and take decisive action with confidence.",
+    "reversed": "Domination, rigidity, lack of discipline; soften control or reclaim your power.",
+    "keywords": ["authority", "structure", "control", "leadership", "stability"]
+  },
+  "the-hierophant": {
+    "upright": "Tradition, spiritual wisdom, conformity; honor established systems and seek guidance from mentors.",
+    "reversed": "Rebellion, unconventional beliefs, restriction; question dogma and forge your own path.",
+    "keywords": ["tradition", "teaching", "belief", "conformity", "guidance"]
+  },
+  "the-lovers": {
+    "upright": "Love, harmony, alignment; make choices from the heart and honor meaningful connections.",
+    "reversed": "Disharmony, imbalance, difficult choices; examine your values and relationships.",
+    "keywords": ["love", "choice", "harmony", "relationships", "values"]
+  },
+  "the-chariot": {
+    "upright": "Willpower, determination, victory; harness opposing forces and drive toward your goal with focus.",
+    "reversed": "Lack of control, aggression, stalled progress; realign your direction.",
+    "keywords": ["willpower", "victory", "determination", "control", "action"]
+  },
+  "strength": {
+    "upright": "Inner strength, courage, compassion; tame challenges with gentle persistence and brave authenticity.",
+    "reversed": "Self-doubt, weakness, raw emotion; reclaim your courage and self-control.",
+    "keywords": ["courage", "compassion", "inner-power", "patience", "resilience"]
+  },
+  "the-hermit": {
+    "upright": "Soul-searching, introspection, inner guidance; withdraw to find truth and illuminate your path.",
+    "reversed": "Isolation, loneliness, withdrawal; balance solitude with connection.",
+    "keywords": ["introspection", "solitude", "wisdom", "guidance", "reflection"]
+  },
+  "wheel-of-fortune": {
+    "upright": "Cycles, destiny, turning point; embrace change and trust the natural rhythm of life.",
+    "reversed": "Bad luck, resistance, no control; surrender to the cycle and adapt.",
+    "keywords": ["cycles", "fate", "change", "turning-point", "destiny"]
+  },
+  "justice": {
+    "upright": "Fairness, truth, law; seek balance and make decisions with clarity and integrity.",
+    "reversed": "Unfairness, dishonesty, avoidance; face consequences and restore accountability.",
+    "keywords": ["fairness", "truth", "balance", "law", "accountability"]
+  },
+  "the-hanged-man": {
+    "upright": "Surrender, pause, new perspective; release control and see the situation from a different angle.",
+    "reversed": "Stalling, resistance, indecision; stop waiting and take action.",
+    "keywords": ["surrender", "perspective", "pause", "letting-go", "sacrifice"]
+  },
+  "death": {
+    "upright": "Transformation, endings, transition; release the old to make space for rebirth and renewal.",
+    "reversed": "Resistance, stagnation, fear of change; embrace the necessary ending.",
+    "keywords": ["transformation", "endings", "transition", "rebirth", "release"]
+  },
+  "temperance": {
+    "upright": "Balance, moderation, patience; blend opposites with care and maintain steady, harmonious flow.",
+    "reversed": "Imbalance, excess, lack of harmony; restore equilibrium and moderation.",
+    "keywords": ["balance", "moderation", "harmony", "patience", "flow"]
+  },
+  "the-devil": {
+    "upright": "Bondage, materialism, temptation; recognize unhealthy attachments and reclaim your freedom.",
+    "reversed": "Release, freedom, revelation; break chains and liberate yourself from restriction.",
+    "keywords": ["bondage", "materialism", "temptation", "addiction", "freedom"]
+  },
+  "the-tower": {
+    "upright": "Sudden upheaval, revelation, awakening; structures crumble to reveal truth and rebuild stronger.",
+    "reversed": "Avoidance, fear of change, delayed disaster; face the necessary disruption.",
+    "keywords": ["upheaval", "revelation", "awakening", "chaos", "breakthrough"]
+  },
+  "the-star": {
+    "upright": "Hope, renewal, inspiration; trust the future and let healing light guide your path forward.",
+    "reversed": "Despair, disconnection, lack of faith; reconnect with hope and inner light.",
+    "keywords": ["hope", "healing", "inspiration", "renewal", "guidance"]
+  },
+  "the-moon": {
+    "upright": "Illusion, intuition, the unconscious; navigate uncertainty and trust your instincts through the fog.",
+    "reversed": "Clarity, release of fear, deception revealed; truth emerges from confusion.",
+    "keywords": ["illusion", "intuition", "mystery", "subconscious", "dreams"]
+  },
+  "the-sun": {
+    "upright": "Joy, success, vitality; bask in clarity and celebrate the warmth of achievement and positivity.",
+    "reversed": "Temporary setback, dimmed enthusiasm; rediscover your inner light.",
+    "keywords": ["joy", "success", "vitality", "clarity", "positivity"]
+  },
+  "judgement": {
+    "upright": "Reflection, reckoning, rebirth; evaluate the past and step into a higher calling with clarity.",
+    "reversed": "Self-doubt, lack of accountability, harsh judgment; practice self-forgiveness.",
+    "keywords": ["reflection", "reckoning", "rebirth", "calling", "absolution"]
+  },
+  "the-world": {
+    "upright": "Completion, accomplishment, integration; celebrate the full cycle and embrace wholeness.",
+    "reversed": "Incompletion, delays, lack of closure; tie up loose ends before moving forward.",
+    "keywords": ["completion", "accomplishment", "wholeness", "integration", "fulfillment"]
+  }
+}

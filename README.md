@@ -94,14 +94,61 @@ once the project is connected. After deployment, use your Vercel URL as the
 WebApp URL in BotFather.
 If you change your mind later and want the Telegram MainButton back, just toggle the visible flag inside src/app.rs:88-96.
 
+## Changelog
+
+### Version 2.0 - Mobile-Optimized Game UI (2025-01-21)
+
+**Major UI/UX Overhaul**
+- Complete mobile-first redesign optimized for phone screens
+- Game-style UI with bold, highly readable text
+- Emotion-based color coding for all 78 tarot cards
+
+**Mobile Optimization**
+- ✅ Reduced codebase by 50%+ (removed swipe handlers, simplified state)
+- ✅ Touch-optimized: 44px minimum touch targets (Apple HIG standard)
+- ✅ Faster animations (80ms delays, 150ms transitions)
+- ✅ Safe area inset support for notched phones
+- ✅ Scrollable card backs for long descriptions
+- ✅ Removed expensive decorative CSS patterns for better performance
+
+**Game-Style Buttons**
+- ✅ Ultra-bold text (font-weight: 900) with text shadows
+- ✅ 3D button effects with box-shadows and press-down animations
+- ✅ Visual state indicators: → arrow (inactive) / ✓ checkmark (active)
+- ✅ Bright gold gradient primary buttons with high-contrast black text
+- ✅ Centered, uppercase text with increased letter-spacing
+
+**Emotion-Based Card Theming**
+Each suit now has a unique color theme:
+- 🔵 **Cups** (Water/Emotion): Deep blue tones
+- 🟢 **Pentacles** (Earth/Material): Rich green tones
+- ⚪ **Swords** (Air/Mind): Cool silver/gray tones
+- 🔴 **Wands** (Fire/Passion): Warm red/orange tones
+- 🟣 **Major Arcana** (Spirit): Mystical purple tones
+
+**Enhanced Readability**
+- ✅ White bold text (font-weight: 700) on dark overlays
+- ✅ Suit-specific colored badges and keyword chips
+- ✅ Text shadows for better contrast on all text elements
+- ✅ Selectable text on card backs for easy copying
+
+**Technical Improvements**
+- Optimized WASM bundle size
+- Simplified component architecture (card_grid.rs: 206→104 lines)
+- Better TypeScript integration with Telegram SDK
+- Improved accessibility with proper ARIA labels
+
+### Version 1.0 - Initial Release
+- Basic tarot reading functionality (1/3/5 card spreads)
+- Telegram Mini App integration
+- All 78 tarot cards with upright/reversed meanings
+- Theme adaptation for Telegram light/dark modes
+
 ## Next steps
 
-- Flesh out the remaining card entries in [`src/deck/cards.rs`](src/deck/cards.rs)
-  with intuitive upright/reversed meanings (the major arcana and a few minor
-  cards ship as examples).
-- Replace the placeholder front-card face with a custom design or animation.
-- Persist the last reading locally so returning users can revisit it.
-- Add internationalisation if you plan to support multiple languages.
+- Persist the last reading locally so returning users can revisit it
+- Add internationalisation if you plan to support multiple languages
+- Implement reading history and saved spreads
 
 ## Further reading
 

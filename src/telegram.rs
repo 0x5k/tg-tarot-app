@@ -1,5 +1,7 @@
 use yew::prelude::*;
 
+use crate::i18n::Language;
+
 #[cfg(target_arch = "wasm32")]
 use telegram_webapp_sdk::{
     core::{
@@ -72,9 +74,10 @@ pub fn init_web_app() -> TelegramSetup {
             setup.theme = TelegramTheme::from(theme);
         }
 
-        return setup;
+        setup
     }
 
+    #[cfg(not(target_arch = "wasm32"))]
     TelegramSetup::default()
 }
 
@@ -218,4 +221,38 @@ fn sync_back_button(state: &BackButtonState) {
 fn register_back_button_handler(callback: Callback<()>) -> Option<EventHandle<dyn FnMut()>> {
     let app = TelegramWebApp::instance()?;
     app.set_back_button_callback(move || callback.emit(())).ok()
+}
+
+/// Detects the user's language from Telegram or browser
+pub fn detect_language() -> Language {
+    #[cfg(target_arch = "wasm32")]
+    {
+        // Try to get language from Telegram init data
+        if let Some(lang_code) = get_telegram_language() {
+            return Language::from_code(&lang_code);
+        }
+
+        // Fallback to browser language
+        if let Some(window) = web_sys::window() {
+            let navigator = window.navigator();
+            if let Some(lang) = navigator.language() {
+                let code = lang.split('-').next().unwrap_or("en");
+                return Language::from_code(code);
+            }
+        }
+    }
+
+    Language::default()
+}
+
+#[cfg(target_arch = "wasm32")]
+fn get_telegram_language() -> Option<String> {
+    use js_sys::Reflect;
+    use wasm_bindgen::JsValue;
+
+    let web_app = web_app_object()?;
+    let init_data_unsafe = Reflect::get(&web_app, &JsValue::from_str("initDataUnsafe")).ok()?;
+    let user = Reflect::get(&init_data_unsafe, &JsValue::from_str("user")).ok()?;
+    let lang = Reflect::get(&user, &JsValue::from_str("language_code")).ok()?;
+    lang.as_string()
 }

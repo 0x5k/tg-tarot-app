@@ -1,0 +1,35 @@
+{
+  "language": "English",
+  "buttons": {
+    "draw": "Draw Cards",
+    "copy": "Copy Names",
+    "language": "🇺🇦 UA"
+  },
+  "spreads": {
+    "single": {
+      "label": "Single Card",
+      "description": "A quick pulse check."
+    },
+    "three": {
+      "label": "Three Cards",
+      "description": "Past · Present · Future."
+    },
+    "five": {
+      "label": "Five Cards",
+      "description": "Deep-dive spread."
+    }
+  },
+  "empty": {
+    "title": "Cards can be REVERSED and UPRIGHT",
+    "subtitle": "Tap card to reveal meaning"
+  },
+  "feedback": {
+    "cleared": "Cleared reading",
+    "copied": "Copied {count} card{plural}",
+    "draw_first": "Draw cards first"
+  },
+  "orientation": {
+    "upright": "Upright",
+    "reversed": "Reversed"
+  }
+}

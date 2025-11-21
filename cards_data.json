@@ -780,5 +780,290 @@
       "drive",
       "creativity"
     ]
+  },
+  {
+    "slug": "the-fool",
+    "name": "The Fool",
+    "upright": "New beginnings, innocence, spontaneity; trust the journey and embrace the unknown with open curiosity.",
+    "reversed": "Recklessness, naivety, missed opportunities; ground yourself before leaping.",
+    "keywords": [
+      "beginnings",
+      "innocence",
+      "leap",
+      "trust",
+      "adventure"
+    ]
+  },
+  {
+    "slug": "the-magician",
+    "name": "The Magician",
+    "upright": "Manifestation, resourcefulness, power; you have all the tools needed—use them with intention.",
+    "reversed": "Manipulation, untapped talent, scattered energy; refocus your abilities.",
+    "keywords": [
+      "manifestation",
+      "skill",
+      "power",
+      "action",
+      "resourcefulness"
+    ]
+  },
+  {
+    "slug": "the-high-priestess",
+    "name": "The High Priestess",
+    "upright": "Intuition, sacred knowledge, the subconscious; listen to your inner voice and trust what you know.",
+    "reversed": "Secrets, disconnection, repressed feelings; reconnect with your intuition.",
+    "keywords": [
+      "intuition",
+      "mystery",
+      "inner-wisdom",
+      "subconscious"
+    ]
+  },
+  {
+    "slug": "the-empress",
+    "name": "The Empress",
+    "upright": "Abundance, nurturing, fertility; create beauty and embrace the natural flow of growth.",
+    "reversed": "Creative block, dependence, neglect; restore balance to give and receive.",
+    "keywords": [
+      "abundance",
+      "nurturing",
+      "nature",
+      "creativity",
+      "fertility"
+    ]
+  },
+  {
+    "slug": "the-emperor",
+    "name": "The Emperor",
+    "upright": "Authority, structure, control; establish order and take decisive action with confidence.",
+    "reversed": "Domination, rigidity, lack of discipline; soften control or reclaim your power.",
+    "keywords": [
+      "authority",
+      "structure",
+      "control",
+      "leadership",
+      "stability"
+    ]
+  },
+  {
+    "slug": "the-hierophant",
+    "name": "The Hierophant",
+    "upright": "Tradition, spiritual wisdom, conformity; honor established systems and seek guidance from mentors.",
+    "reversed": "Rebellion, unconventional beliefs, restriction; question dogma and forge your own path.",
+    "keywords": [
+      "tradition",
+      "teaching",
+      "belief",
+      "conformity",
+      "guidance"
+    ]
+  },
+  {
+    "slug": "the-lovers",
+    "name": "The Lovers",
+    "upright": "Love, harmony, alignment; make choices from the heart and honor meaningful connections.",
+    "reversed": "Disharmony, imbalance, difficult choices; examine your values and relationships.",
+    "keywords": [
+      "love",
+      "choice",
+      "harmony",
+      "relationships",
+      "values"
+    ]
+  },
+  {
+    "slug": "the-chariot",
+    "name": "The Chariot",
+    "upright": "Willpower, determination, victory; harness opposing forces and drive toward your goal with focus.",
+    "reversed": "Lack of control, aggression, stalled progress; realign your direction.",
+    "keywords": [
+      "willpower",
+      "victory",
+      "determination",
+      "control",
+      "action"
+    ]
+  },
+  {
+    "slug": "strength",
+    "name": "Strength",
+    "upright": "Inner strength, courage, compassion; tame challenges with gentle persistence and brave authenticity.",
+    "reversed": "Self-doubt, weakness, raw emotion; reclaim your courage and self-control.",
+    "keywords": [
+      "courage",
+      "compassion",
+      "inner-power",
+      "patience",
+      "resilience"
+    ]
+  },
+  {
+    "slug": "the-hermit",
+    "name": "The Hermit",
+    "upright": "Soul-searching, introspection, inner guidance; withdraw to find truth and illuminate your path.",
+    "reversed": "Isolation, loneliness, withdrawal; balance solitude with connection.",
+    "keywords": [
+      "introspection",
+      "solitude",
+      "wisdom",
+      "guidance",
+      "reflection"
+    ]
+  },
+  {
+    "slug": "wheel-of-fortune",
+    "name": "Wheel of Fortune",
+    "upright": "Cycles, destiny, turning point; embrace change and trust the natural rhythm of life.",
+    "reversed": "Bad luck, resistance, no control; surrender to the cycle and adapt.",
+    "keywords": [
+      "cycles",
+      "fate",
+      "change",
+      "turning-point",
+      "destiny"
+    ]
+  },
+  {
+    "slug": "justice",
+    "name": "Justice",
+    "upright": "Fairness, truth, law; seek balance and make decisions with clarity and integrity.",
+    "reversed": "Unfairness, dishonesty, avoidance; face consequences and restore accountability.",
+    "keywords": [
+      "fairness",
+      "truth",
+      "balance",
+      "law",
+      "accountability"
+    ]
+  },
+  {
+    "slug": "the-hanged-man",
+    "name": "The Hanged Man",
+    "upright": "Surrender, pause, new perspective; release control and see the situation from a different angle.",
+    "reversed": "Stalling, resistance, indecision; stop waiting and take action.",
+    "keywords": [
+      "surrender",
+      "perspective",
+      "pause",
+      "letting-go",
+      "sacrifice"
+    ]
+  },
+  {
+    "slug": "death",
+    "name": "Death",
+    "upright": "Transformation, endings, transition; release the old to make space for rebirth and renewal.",
+    "reversed": "Resistance, stagnation, fear of change; embrace the necessary ending.",
+    "keywords": [
+      "transformation",
+      "endings",
+      "transition",
+      "rebirth",
+      "release"
+    ]
+  },
+  {
+    "slug": "temperance",
+    "name": "Temperance",
+    "upright": "Balance, moderation, patience; blend opposites with care and maintain steady, harmonious flow.",
+    "reversed": "Imbalance, excess, lack of harmony; restore equilibrium and moderation.",
+    "keywords": [
+      "balance",
+      "moderation",
+      "harmony",
+      "patience",
+      "flow"
+    ]
+  },
+  {
+    "slug": "the-devil",
+    "name": "The Devil",
+    "upright": "Bondage, materialism, temptation; recognize unhealthy attachments and reclaim your freedom.",
+    "reversed": "Release, freedom, revelation; break chains and liberate yourself from restriction.",
+    "keywords": [
+      "bondage",
+      "materialism",
+      "temptation",
+      "addiction",
+      "freedom"
+    ]
+  },
+  {
+    "slug": "the-tower",
+    "name": "The Tower",
+    "upright": "Sudden upheaval, revelation, awakening; structures crumble to reveal truth and rebuild stronger.",
+    "reversed": "Avoidance, fear of change, delayed disaster; face the necessary disruption.",
+    "keywords": [
+      "upheaval",
+      "revelation",
+      "awakening",
+      "chaos",
+      "breakthrough"
+    ]
+  },
+  {
+    "slug": "the-star",
+    "name": "The Star",
+    "upright": "Hope, renewal, inspiration; trust the future and let healing light guide your path forward.",
+    "reversed": "Despair, disconnection, lack of faith; reconnect with hope and inner light.",
+    "keywords": [
+      "hope",
+      "healing",
+      "inspiration",
+      "renewal",
+      "guidance"
+    ]
+  },
+  {
+    "slug": "the-moon",
+    "name": "The Moon",
+    "upright": "Illusion, intuition, the unconscious; navigate uncertainty and trust your instincts through the fog.",
+    "reversed": "Clarity, release of fear, deception revealed; truth emerges from confusion.",
+    "keywords": [
+      "illusion",
+      "intuition",
+      "mystery",
+      "subconscious",
+      "dreams"
+    ]
+  },
+  {
+    "slug": "the-sun",
+    "name": "The Sun",
+    "upright": "Joy, success, vitality; bask in clarity and celebrate the warmth of achievement and positivity.",
+    "reversed": "Temporary setback, dimmed enthusiasm; rediscover your inner light.",
+    "keywords": [
+      "joy",
+      "success",
+      "vitality",
+      "clarity",
+      "positivity"
+    ]
+  },
+  {
+    "slug": "judgement",
+    "name": "Judgement",
+    "upright": "Reflection, reckoning, rebirth; evaluate the past and step into a higher calling with clarity.",
+    "reversed": "Self-doubt, lack of accountability, harsh judgment; practice self-forgiveness.",
+    "keywords": [
+      "reflection",
+      "reckoning",
+      "rebirth",
+      "calling",
+      "absolution"
+    ]
+  },
+  {
+    "slug": "the-world",
+    "name": "The World",
+    "upright": "Completion, accomplishment, integration; celebrate the full cycle and embrace wholeness.",
+    "reversed": "Incompletion, delays, lack of closure; tie up loose ends before moving forward.",
+    "keywords": [
+      "completion",
+      "accomplishment",
+      "wholeness",
+      "integration",
+      "fulfillment"
+    ]
   }
 ]
