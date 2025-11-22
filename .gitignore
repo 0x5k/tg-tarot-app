@@ -21,6 +21,8 @@ target
 #.idea/
 
 CLAUDE.md
+MYREADME.md
+.venv/
 # Added by cargo
 
 /target

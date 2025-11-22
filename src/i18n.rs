@@ -13,6 +13,8 @@ pub struct Translations {
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct CardTranslation {
+    #[serde(default)]
+    pub name: Option<String>,
     pub upright: String,
     pub reversed: String,
     pub keywords: Vec<String>,

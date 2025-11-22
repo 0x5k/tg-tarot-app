@@ -86,6 +86,7 @@ pub fn app() -> Html {
         let reading = reading.clone();
         let feedback = feedback.clone();
         let t = translations.clone();
+        let ct = card_translations.clone();
         Callback::from(move |_| {
             let cards = reading.cards();
             if cards.is_empty() {
@@ -93,7 +94,24 @@ pub fn app() -> Html {
                 return;
             }
 
-            let names: Vec<String> = cards.iter().map(|card| card.full_name()).collect();
+            // Build translated full names
+            let names: Vec<String> = cards
+                .iter()
+                .map(|card| {
+                    let card_name = ct
+                        .get(card.card.slug)
+                        .and_then(|c| c.name.clone())
+                        .unwrap_or_else(|| card.card.name.to_string());
+
+                    match card.orientation {
+                        crate::deck::Orientation::Upright => card_name,
+                        crate::deck::Orientation::Reversed => {
+                            format!("{} ({})", card_name, &t.orientation.reversed)
+                        }
+                    }
+                })
+                .collect();
+
             let payload = names.join("\n");
             match copy_to_clipboard(&payload) {
                 Ok(_) => {
