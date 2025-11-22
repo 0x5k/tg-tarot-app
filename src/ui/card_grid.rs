@@ -132,7 +132,12 @@ fn render_card(index: usize, card: DrawnCard, is_flipped: bool, onclick: Callbac
             >
                 <div class="card-inner">
                     <div class="card-face card-face--front">
-                        <img src={card.image_path()} alt={card.name()} loading="lazy" />
+                        <img
+                            src={card.image_path()}
+                            alt={card.name()}
+                            loading="lazy"
+                            class={classes!(matches!(card.orientation, Orientation::Reversed).then_some("is-reversed"))}
+                        />
                     </div>
                     <div class={classes!("card-face", "card-face--back", suit_class)}>
                         <div class="card-copy" onclick={stop_propagation}>

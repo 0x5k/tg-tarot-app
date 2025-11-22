@@ -36,7 +36,7 @@ pub fn draw_controls(props: &DrawControlsProps) -> Html {
                 aria-expanded={(!collapsed).to_string()}
             >
                 <span class="controls-toggle-icon">{ if collapsed { "▲" } else { "▼" } }</span>
-                <span class="controls-toggle-label">{ if collapsed { &t.buttons.draw } else { "" } }</span>
+                <span class="controls-toggle-label">{ if collapsed { &t.buttons.draw } else { &t.buttons.hide } }</span>
             </button>
 
             // Collapsible content

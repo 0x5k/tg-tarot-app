@@ -3,7 +3,8 @@
   "buttons": {
     "draw": "Draw Cards",
     "copy": "Copy Names",
-    "language": "🇺🇦 UA"
+    "language": "🇺🇦 UA",
+    "hide": "Hide"
   },
   "spreads": {
     "single": {

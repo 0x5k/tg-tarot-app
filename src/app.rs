@@ -56,12 +56,11 @@ pub fn app() -> Html {
         let draw_count = draw_count.clone();
         let reading = reading.clone();
         let feedback = feedback.clone();
-        let controls_collapsed = controls_collapsed.clone();
         Callback::from(move |_| match Deck::standard().draw_random(*draw_count) {
             Ok(cards) => {
                 reading.set(Reading::from_cards(cards));
                 feedback.set(Feedback::default());
-                controls_collapsed.set(true); // Collapse controls after drawing
+                // Controls stay visible - user can collapse manually
             }
             Err(err) => {
                 reading.set(Reading::empty());

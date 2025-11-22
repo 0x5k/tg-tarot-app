@@ -27,6 +27,7 @@ pub struct ButtonTranslations {
     pub draw: String,
     pub copy: String,
     pub language: String,
+    pub hide: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
